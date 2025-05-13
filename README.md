@@ -16,7 +16,10 @@ This is an Android mobile application written in Kotlin. It allows users to view
 | **Networking**          | Retrofit                          |
 | **Database**            | Room                             |
 
+
 ## Screenshots
-![screen1](screenshots/screen1.jpg)
-![screen2](screenshots/screen2.jpg)
-![screen3](screenshots/screen3.jpg)
+<img src="screenshots/screen1.jpg" width="300">
+---
+<img src="screenshots/screen2.jpg" width="300">
+---
+<img src="screenshots/screen3.jpg" width="300">
