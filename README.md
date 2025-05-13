@@ -17,3 +17,8 @@ This is an Android mobile application written in Kotlin. It allows users to view
 | **Database**            | Room                             |
 
 ## Screenshots
+<div align="center">  
+  <img src="screenshots/screen1.png" width="250" >  
+  <img src="screenshots/screen2.png" width="250">  
+  <img src="screenshots/screen3.png" width="250">  
+</div>  
