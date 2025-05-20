@@ -70,6 +70,9 @@ dependencies {
 
     implementation("androidx.work:work-runtime-ktx:2.10.1")
 
+    implementation("com.google.dagger:dagger:2.56.2")
+    kapt("com.google.dagger:dagger-compiler:2.56.2")
+
 
 
 }
