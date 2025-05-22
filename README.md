@@ -12,7 +12,7 @@ This is an Android mobile application written in Kotlin. It allows users to view
 |--------------------------|-----------------------------------|
 | **Language**             | Kotlin                            |
 | **Architecture**         | Clean Architecture                |
-| **Reactive Programming** | LiveData, Coroutines              |
+| **Reactive Programming** | LiveData, Coroutines, Dagger2|
 | **Networking**          | Retrofit                          |
 | **Database**            | Room                             |
 
