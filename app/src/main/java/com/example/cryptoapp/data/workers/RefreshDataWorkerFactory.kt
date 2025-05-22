@@ -7,24 +7,25 @@ import androidx.work.WorkerParameters
 import com.example.cryptoapp.data.database.CoinInfoDao
 import com.example.cryptoapp.data.mapper.CoinMapper
 import com.example.cryptoapp.data.network.ApiService
+import com.example.cryptoapp.di.ChildWorkerFactory
+import javax.inject.Inject
+import javax.inject.Provider
 
-class RefreshDataWorkerFactory(
-    private val coinInfoDao: CoinInfoDao,
-    private val apiService: ApiService,
-    private val mapper: CoinMapper
-): WorkerFactory() {
+class RefreshDataWorkerFactory @Inject constructor(
+    private val workerProviders: @JvmSuppressWildcards Map<Class<out ListenableWorker>, Provider<ChildWorkerFactory>>
+) : WorkerFactory() {
 
     override fun createWorker(
         appContext: Context,
         workerClassName: String,
         workerParameters: WorkerParameters
-    ): ListenableWorker {
-        return RefreshDataWorker(
-            appContext,
-            workerParameters,
-            coinInfoDao,
-            apiService,
-            mapper
-        )
+    ): ListenableWorker? {
+        return when(workerClassName){
+            RefreshDataWorker::class.qualifiedName -> {
+                val childWorkerFactory = workerProviders[RefreshDataWorker::class.java]?.get()
+                return childWorkerFactory?.create(appContext, workerParameters)
+            }
+            else -> null
+        }
     }
 }
